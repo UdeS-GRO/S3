@@ -11,6 +11,12 @@
 #include <QGraphicsItem>
 #include <QFile>
 #include <QTextStream>
+#include <QDebug>
+#include <QtWidgets>
+#include <QJsonObject>
+#include <QJsonDocument>
+
+#include "csvwriter.h"
 
 namespace Ui {
 class MainWindow;
@@ -52,19 +58,13 @@ private:
     void connectSpinBoxes();
     void startRecording();
     void stopRecording();
-    void writeFile(QString);
 
     bool record = false;
+    CsvWriter* writer_;
     QTimer updateTimer_;
     QString msgReceived_{""};
     QString msgBuffer{""};
     SerialProtocol* serialCom;
-    QString filename = "/home/pi/Desktop/Data.txt";
-    QFile file;
-    QTextStream outStream;
-
-
-
     QGraphicsScene scene;
     Plot potVex;
 

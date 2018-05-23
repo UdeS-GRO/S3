@@ -8,7 +8,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = exemplePID
+TARGET = identifications
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -27,13 +27,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     serialprotocol.cpp \
-    plot.cpp
+    plot.cpp \
+    csvwriter.cpp
 
 HEADERS += \
         mainwindow.h \
     yourmainwindow.h \
     serialprotocol.h \
-    plot.h
+    plot.h \
+    csvwriter.h
 
 FORMS += \
         mainwindow.ui

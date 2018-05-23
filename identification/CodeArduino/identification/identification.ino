@@ -145,9 +145,9 @@ void updateState(){
   potvex = analogRead(A5);
   
   // Mise a jour du JSON
-  // state_msg["accel_x"] = Axyz[0];
+  state_msg["accel_x"] = Axyz[0];
   state_msg["accel_y"] = Axyz[1];
-  // state_msg["accel_z"] = Axyz[2];
+  state_msg["accel_z"] = Axyz[2];
   state_msg["current"] = current_mA;
   state_msg["load_voltage"] = loadvoltage; 
   state_msg["pot_vex"] = potvex;

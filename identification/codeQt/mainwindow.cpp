@@ -1,10 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QDebug>
-#include <QtWidgets>
-#include <QJsonObject>
-#include <QJsonDocument>
 
 MainWindow::MainWindow(QString portName, int updateRate, QWidget *parent) :
     QMainWindow(parent)
@@ -23,13 +19,13 @@ MainWindow::MainWindow(QString portName, int updateRate, QWidget *parent) :
     connectSerialPortRead();
 
     // Plot data
-
     potVex.setDataLen(500);
     potVex.setColor(255,0,0);
     potVex.setGain(1);
 
-    file.setFileName(filename);
-    outStream.setDevice(&file);
+    /*file.setFileName(filename);
+    outStream.setDevice(&file);*/
+
 }
 
 MainWindow::~MainWindow()
@@ -67,7 +63,7 @@ void MainWindow::receiveFromSerial(QString msg) {
             msgReceived_ = msgBuffer;
             onMessageReceived(msgReceived_);
             if(record){
-                writeFile(msgBuffer);
+                writer_->write(jsonObj);
             }
             msgBuffer = "";
         }
@@ -82,7 +78,6 @@ void MainWindow::connectTimers(int updateRate) {
     });
     updateTimer_.start(updateRate);
 }
-
 
 void MainWindow::connectSerialPortRead() {
     // Fonction de connection au message de la classe (serialProtocol)
@@ -147,17 +142,11 @@ void MainWindow::manageRecording(int stateButton){
 }
 
 void MainWindow::startRecording(){
-    qDebug() << "button pressed";
     record = true;
-    file.open(QIODevice::WriteOnly);
+    writer_ = new CsvWriter();
 }
 
 void MainWindow::stopRecording(){
-    qDebug() << "button unpressed";
     record = false;
-    file.close();
-}
-
-void MainWindow::writeFile(QString msg){
-    outStream << msg;
+    delete writer_;
 }
