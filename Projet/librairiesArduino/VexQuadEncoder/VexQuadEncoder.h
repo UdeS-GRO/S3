@@ -58,6 +58,10 @@ class VexQuadEncoder
     */
     uint8_t getPinCh2(){return PIN_CH2_;};
 
+    /** Method to reset counter_
+    */
+    void reset(){counter_=0;};
+
   private:
     uint8_t PIN_CH1_;
     uint8_t PIN_CH2_;
