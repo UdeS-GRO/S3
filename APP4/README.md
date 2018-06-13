@@ -7,6 +7,9 @@ Ce dépôt contient le code nécessaire pour la résolution de l'APP 4 de la ses
 Premièrement, vous devez clôner ce dépôt sur votre espace de travail Linux (votre RaspberryPi, par exemple).
 On vous suggère de tout d'abord créer un sous-dossier pour le code de la S3, puis d'y télécharger tout le contenu.
 
+(**NOTE:** Si vous avez déjà suivi cette procédure pour le projet, vous pouvez
+ ignorer ces instructions)
+
 Ouvrez d'abord un terminal, puis entrez ces commandes (le "$" représente l'invite, et ce qui suit "#" des commentaires):
 
 ```
