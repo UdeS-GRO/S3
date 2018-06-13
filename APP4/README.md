@@ -5,24 +5,27 @@ Ce dépôt contient le code nécessaire pour la résolution de l'APP 4 de la ses
 ## Introduction
 
 Premièrement, vous devez clôner ce dépôt sur votre espace de travail Linux (votre RaspberryPi, par exemple).
-On vous suggère de tout d'abord créer un sous-dossier pour l'APP, puis d'y télécharger tout le contenu.
+On vous suggère de tout d'abord créer un sous-dossier pour le code de la S3, puis d'y télécharger tout le contenu.
 
 Ouvrez d'abord un terminal, puis entrez ces commandes (le "$" représente l'invite, et ce qui suit "#" des commentaires):
 
 ```
 $ cd               # S'assure que vous êtes dans votre dossier personnel
-$ mkdir s3app4r    # Créé un sous-dossier "s3app4r"
-$ cd s3app4r       # Entre dans ce nouveau sous-dossier
+$ mkdir s3         # Créé un sous-dossier "s3"
+$ cd s3            # Entre dans ce nouveau sous-dossier
 ```
 
 Vous avez maintenant un dossier dans lequel travailler.
 La prochaine ligne clône le dépôt.
 N'oubliez pas le "." à la fin, il indique où clôner le dépôt.
-Dans ce cas-ci, il s'agit du dossier en cours ("\~/s3app4r/", où "\~" représente votre dossier personnel.
+Dans ce cas-ci, il s'agit du dossier en cours ("\~/s3/", où "\~" représente votre dossier personnel.
 
 ```
-$ git clone https://github.com/UdeS-GRO/S3APP4r-GRO300 .
+$ git clone https://github.com/UdeS-GRO/S3 .
 ```
+
+Vous aurez maintenant tout le contenu de la S3 dans ce dossier, ainsi que le
+dossier APP4.
 
 ## Laboratoire 
 
