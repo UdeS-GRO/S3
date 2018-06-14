@@ -29,8 +29,8 @@ MainWindow::MainWindow(QString portName, int updateRate, QWidget *parent) :
     desVelPlot.setDataLen(150);
     desVelPlot.setColor(255,0,0);
 
-    desVelPlot.setGain(6);
-    curVelPlot.setGain(6);
+    desVelPlot.setGain(25);
+    curVelPlot.setGain(25);
 
     curVelPlot.setDataLen(150);
     curVelPlot.setColor(0,0,255);
@@ -115,6 +115,8 @@ void MainWindow::connectCheckBoxRead() {
         if (state){
             serialCom->sendMessage("{\"read\": \"true\"}");
         } else{
+            resetPWM();
+            sendDesVel(0);
             serialCom->sendMessage("{\"read\": \"false\"}");
         }
     });

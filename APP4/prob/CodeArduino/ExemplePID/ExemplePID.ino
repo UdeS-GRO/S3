@@ -104,6 +104,7 @@ void analyseMessage(JsonVariant msg){
   parse_msg =  msg["read"];
   String buff_str = msg["read"];
   if(parse_msg.success()){
+    resetController();
     if (buff_str.equals("true")){
       state_transmit_ = true;
     }
@@ -145,6 +146,16 @@ void sendStateData(){
   /* Fonction pour envoie de l'etat */
   state_msg_.printTo(Serial); // Met le message en attente dans le port serie
   Serial.println();// Envoie le message
+}
+
+void resetController(){
+  /* Fonction permettant de suspendre le controlleur PID */
+  /* Est appeler quand le bouton lecture change d'etat */
+  des_vel_ = 0;
+  err_I_ = 0;
+  last_err_ = 0;
+  s3gro.ControleMoteurs(0, 0);
+  s3gro.clearEncodeurCount();
 }
 
 void runPID(){
@@ -239,4 +250,3 @@ void loop() {
   timer.run();
 
 }
-
