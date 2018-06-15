@@ -37,6 +37,12 @@ void robotdiag::init()
 
 }
 
+// Fonction de réception des événements.
+// Cette fonction est appelée soit à la réception d'un événement d'un robot
+// réel (par la communication avec l'Arduino), soit du simulateur.
+// La fonction doit : 
+//   - Enregistrer tous les événements dans le vecteur data_;
+//   - Enregistrer les événements à exporter dans la liste queue_;
 void robotdiag::push_event(RobotState evt)
 {
     // Conserve toutes les données
