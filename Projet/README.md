@@ -10,3 +10,7 @@
 ### Mise en route 
 
 Voir le wiki du projet pour l'initialisation du code d'identification.
+
+### Repo pertinent
+
+Librairie personnalisée pour S3 https://github.com/UdeS-GRO/LibS3GRO.git 
